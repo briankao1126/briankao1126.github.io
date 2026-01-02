@@ -1,4 +1,4 @@
-import { Home, BookOpen, PenLine, Moon, Sun } from "lucide-react";
+import { Home, BookOpen, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
 import { useState, useEffect } from "react";
@@ -26,7 +26,6 @@ export default function Navigation() {
   const navItems = [
     { path: "/", icon: Home, label: "首頁" },
     { path: "/diaries", icon: BookOpen, label: "日記" },
-    { path: "/new", icon: PenLine, label: "新增" },
   ];
 
   return (

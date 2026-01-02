@@ -3,31 +3,10 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import ProfileSection from "@/components/ProfileSection";
 import DiaryCard from "@/components/DiaryCard";
+import { diaries } from "@/data/diaries";
 
 export default function Home() {
-  const recentDiaries = [
-    {
-      id: 1,
-      title: "秋天的第一杯奶茶",
-      date: "2025-11-07",
-      preview: "今天天氣好冷，終於喝到了期待已久的秋天第一杯奶茶！溫暖的奶茶配上窗外的落葉，這個季節真的太美好了。",
-      mood: "happy" as const,
-    },
-    {
-      id: 2,
-      title: "圖書館的安靜時光",
-      date: "2025-11-06",
-      preview: "在圖書館待了一整天，讀完了一本很棒的小說。安靜的環境讓我可以好好沉浸在故事裡，這種感覺真好。",
-      mood: "calm" as const,
-    },
-    {
-      id: 3,
-      title: "和朋友的週末聚會",
-      date: "2025-11-05",
-      preview: "好久不見的朋友們終於聚在一起！我們去了新開的餐廳，聊了很多有趣的事情，笑到肚子痛。友情萬歲！",
-      mood: "excited" as const,
-    },
-  ];
+  const recentDiaries = diaries.slice(0, 3);
 
   return (
     <div className="min-h-screen">
@@ -50,7 +29,7 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {recentDiaries.map((diary) => (
-            <DiaryCard key={diary.id} {...diary} />
+            <DiaryCard key={diary.id} diary={diary} />
           ))}
         </div>
       </section>
